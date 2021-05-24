@@ -141,6 +141,7 @@ let s:blue = s:colors.blue
 let s:purple = s:colors.purple
 let s:cyan = s:colors.cyan
 let s:white = s:colors.white
+let s:pure_white = s:colors.pure_white
 let s:black = s:colors.black
 let s:visual_black = s:colors.visual_black " Black out selected text in 16-color visual mode
 let s:comment_grey = s:colors.comment_grey
@@ -157,7 +158,7 @@ let s:vertsplit = s:colors.vertsplit
 
 let g:terminal_ansi_colors = [
   \ s:black.gui, s:red.gui, s:green.gui, s:yellow.gui,
-  \ s:blue.gui, s:purple.gui, s:cyan.gui, s:white.gui,
+  \ s:blue.gui, s:purple.gui, s:cyan.gui, s:pure_white.gui,
   \ s:visual_grey.gui, s:dark_red.gui, s:green.gui, s:dark_yellow.gui,
   \ s:blue.gui, s:purple.gui, s:cyan.gui, s:comment_grey.gui
 \]
@@ -237,11 +238,11 @@ call s:h("MatchParen", { "fg": s:blue, "gui": "underline", "cterm": "underline" 
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
-call s:h("Normal", { "fg": s:white, "bg": s:black }) " normal text
+call s:h("Normal", { "fg": s:pure_white, "bg": s:black }) " normal text
 call s:h("Pmenu", { "bg": s:menu_grey }) " Popup menu: normal item.
 call s:h("PmenuSel", { "fg": s:black, "bg": s:blue }) " Popup menu: selected item.
 call s:h("PmenuSbar", { "bg": s:special_grey }) " Popup menu: scrollbar.
-call s:h("PmenuThumb", { "bg": s:white }) " Popup menu: Thumb of the scrollbar.
+call s:h("PmenuThumb", { "bg": s:pure_white }) " Popup menu: Thumb of the scrollbar.
 call s:h("Question", { "fg": s:purple }) " hit-enter prompt and yes/no questions
 call s:h("QuickFixLine", { "fg": s:black, "bg": s:yellow }) " Current quickfix item in the quickfix window.
 call s:h("Search", { "fg": s:black, "bg": s:yellow }) " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
@@ -250,14 +251,14 @@ call s:h("SpellBad", { "fg": s:red, "gui": "underline", "cterm": "underline" }) 
 call s:h("SpellCap", { "fg": s:dark_yellow }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", { "fg": s:dark_yellow }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:dark_yellow }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
-call s:h("StatusLine", { "fg": s:white, "bg": s:cursor_grey }) " status line of current window
+call s:h("StatusLine", { "fg": s:pure_white, "bg": s:cursor_grey }) " status line of current window
 call s:h("StatusLineNC", { "fg": s:comment_grey }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-call s:h("StatusLineTerm", { "fg": s:white, "bg": s:cursor_grey }) " status line of current :terminal window
+call s:h("StatusLineTerm", { "fg": s:pure_white, "bg": s:cursor_grey }) " status line of current :terminal window
 call s:h("StatusLineTermNC", { "fg": s:comment_grey }) " status line of non-current :terminal window
 call s:h("TabLine", { "fg": s:comment_grey }) " tab pages line, not active tab page label
 call s:h("TabLineFill", {}) " tab pages line, where there are no labels
-call s:h("TabLineSel", { "fg": s:white }) " tab pages line, active tab page label
-call s:h("Terminal", { "fg": s:white, "bg": s:black }) " terminal window (see terminal-size-color)
+call s:h("TabLineSel", { "fg": s:pure_white }) " tab pages line, active tab page label
+call s:h("Terminal", { "fg": s:pure_white, "bg": s:black }) " terminal window (see terminal-size-color)
 call s:h("Title", { "fg": s:green }) " titles for output from ":set all", ":autocmd" etc.
 call s:h("Visual", { "fg": s:visual_black, "bg": s:visual_grey }) " Visual mode selection
 call s:h("VisualNOS", { "bg": s:visual_grey }) " Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
@@ -279,7 +280,7 @@ call s:h("debugBreakpoint", { "fg": s:black, "bg": s:red }) " a breakpoint
 " CSS
 call s:h("cssAttrComma", { "fg": s:purple })
 call s:h("cssAttributeSelector", { "fg": s:green })
-call s:h("cssBraces", { "fg": s:white })
+call s:h("cssBraces", { "fg": s:pure_white })
 call s:h("cssClassName", { "fg": s:dark_yellow })
 call s:h("cssClassNameDot", { "fg": s:dark_yellow })
 call s:h("cssDefinition", { "fg": s:purple })
@@ -288,10 +289,10 @@ call s:h("cssFontDescriptor", { "fg": s:purple })
 call s:h("cssFunctionName", { "fg": s:blue })
 call s:h("cssIdentifier", { "fg": s:blue })
 call s:h("cssImportant", { "fg": s:purple })
-call s:h("cssInclude", { "fg": s:white })
+call s:h("cssInclude", { "fg": s:pure_white })
 call s:h("cssIncludeKeyword", { "fg": s:purple })
 call s:h("cssMediaType", { "fg": s:dark_yellow })
-call s:h("cssProp", { "fg": s:white })
+call s:h("cssProp", { "fg": s:pure_white })
 call s:h("cssPseudoClassId", { "fg": s:dark_yellow })
 call s:h("cssSelectorOp", { "fg": s:purple })
 call s:h("cssSelectorOp2", { "fg": s:purple })
@@ -317,7 +318,7 @@ call s:h("goTypeDecl", { "fg": s:purple })
 " HTML (keep consistent with Markdown, below)
 call s:h("htmlArg", { "fg": s:dark_yellow })
 call s:h("htmlBold", { "fg": s:dark_yellow, "gui": "bold", "cterm": "bold" })
-call s:h("htmlEndTag", { "fg": s:white })
+call s:h("htmlEndTag", { "fg": s:pure_white })
 call s:h("htmlH1", { "fg": s:red })
 call s:h("htmlH2", { "fg": s:red })
 call s:h("htmlH3", { "fg": s:red })
@@ -328,13 +329,13 @@ call s:h("htmlItalic", { "fg": s:purple, "gui": "italic", "cterm": "italic" })
 call s:h("htmlLink", { "fg": s:cyan, "gui": "underline", "cterm": "underline" })
 call s:h("htmlSpecialChar", { "fg": s:dark_yellow })
 call s:h("htmlSpecialTagName", { "fg": s:red })
-call s:h("htmlTag", { "fg": s:white })
+call s:h("htmlTag", { "fg": s:pure_white })
 call s:h("htmlTagN", { "fg": s:red })
 call s:h("htmlTagName", { "fg": s:red })
-call s:h("htmlTitle", { "fg": s:white })
+call s:h("htmlTitle", { "fg": s:pure_white })
 
 " JavaScript
-call s:h("javaScriptBraces", { "fg": s:white })
+call s:h("javaScriptBraces", { "fg": s:pure_white })
 call s:h("javaScriptFunction", { "fg": s:purple })
 call s:h("javaScriptIdentifier", { "fg": s:purple })
 call s:h("javaScriptNull", { "fg": s:dark_yellow })
@@ -374,14 +375,14 @@ call s:h("javascriptClassKeyword", { "fg": s:purple })
 call s:h("javascriptDocNotation", { "fg": s:purple })
 call s:h("javascriptDocParamName", { "fg": s:blue })
 call s:h("javascriptDocTags", { "fg": s:purple })
-call s:h("javascriptEndColons", { "fg": s:white })
+call s:h("javascriptEndColons", { "fg": s:pure_white })
 call s:h("javascriptExport", { "fg": s:purple })
-call s:h("javascriptFuncArg", { "fg": s:white })
+call s:h("javascriptFuncArg", { "fg": s:pure_white })
 call s:h("javascriptFuncKeyword", { "fg": s:purple })
 call s:h("javascriptIdentifier", { "fg": s:red })
 call s:h("javascriptImport", { "fg": s:purple })
-call s:h("javascriptMethodName", { "fg": s:white })
-call s:h("javascriptObjectLabel", { "fg": s:white })
+call s:h("javascriptMethodName", { "fg": s:pure_white })
+call s:h("javascriptObjectLabel", { "fg": s:pure_white })
 call s:h("javascriptOpSymbol", { "fg": s:cyan })
 call s:h("javascriptOpSymbols", { "fg": s:cyan })
 call s:h("javascriptPropertyName", { "fg": s:green })
@@ -389,11 +390,11 @@ call s:h("javascriptTemplateSB", { "fg": s:dark_red })
 call s:h("javascriptVariable", { "fg": s:purple })
 
 " JSON
-call s:h("jsonCommentError", { "fg": s:white })
+call s:h("jsonCommentError", { "fg": s:pure_white })
 call s:h("jsonKeyword", { "fg": s:red })
 call s:h("jsonBoolean", { "fg": s:dark_yellow })
 call s:h("jsonNumber", { "fg": s:dark_yellow })
-call s:h("jsonQuote", { "fg": s:white })
+call s:h("jsonQuote", { "fg": s:pure_white })
 call s:h("jsonMissingCommaError", { "fg": s:red, "gui": "reverse" })
 call s:h("jsonNoQuotesError", { "fg": s:red, "gui": "reverse" })
 call s:h("jsonNumError", { "fg": s:red, "gui": "reverse" })
@@ -403,7 +404,7 @@ call s:h("jsonSemicolonError", { "fg": s:red, "gui": "reverse" })
 
 " LESS
 call s:h("lessVariable", { "fg": s:purple })
-call s:h("lessAmpersandChar", { "fg": s:white })
+call s:h("lessAmpersandChar", { "fg": s:pure_white })
 call s:h("lessClass", { "fg": s:dark_yellow })
 
 " Markdown (keep consistent with HTML, above)
@@ -449,17 +450,17 @@ call s:h("perlVarPlain",{ "fg": s:blue })
 
 " PHP
 call s:h("phpVarSelector", { "fg": s:red })
-call s:h("phpOperator", { "fg": s:white })
-call s:h("phpParent", { "fg": s:white })
-call s:h("phpMemberSelector", { "fg": s:white })
+call s:h("phpOperator", { "fg": s:pure_white })
+call s:h("phpParent", { "fg": s:pure_white })
+call s:h("phpMemberSelector", { "fg": s:pure_white })
 call s:h("phpType", { "fg": s:purple })
 call s:h("phpKeyword", { "fg": s:purple })
 call s:h("phpClass", { "fg": s:yellow })
-call s:h("phpUseClass", { "fg": s:white })
-call s:h("phpUseAlias", { "fg": s:white })
+call s:h("phpUseClass", { "fg": s:pure_white })
+call s:h("phpUseAlias", { "fg": s:pure_white })
 call s:h("phpInclude", { "fg": s:purple })
 call s:h("phpClassExtends", { "fg": s:green })
-call s:h("phpDocTags", { "fg": s:white })
+call s:h("phpDocTags", { "fg": s:pure_white })
 call s:h("phpFunction", { "fg": s:blue })
 call s:h("phpFunctions", { "fg": s:cyan })
 call s:h("phpMethodsVar", { "fg": s:dark_yellow })
@@ -493,12 +494,12 @@ call s:h("sassAmpersand", { "fg": s:red })
 call s:h("sassClass", { "fg": s:dark_yellow })
 call s:h("sassControl", { "fg": s:purple })
 call s:h("sassExtend", { "fg": s:purple })
-call s:h("sassFor", { "fg": s:white })
+call s:h("sassFor", { "fg": s:pure_white })
 call s:h("sassFunction", { "fg": s:cyan })
 call s:h("sassId", { "fg": s:blue })
 call s:h("sassInclude", { "fg": s:purple })
 call s:h("sassMedia", { "fg": s:purple })
-call s:h("sassMediaOperators", { "fg": s:white })
+call s:h("sassMediaOperators", { "fg": s:pure_white })
 call s:h("sassMixin", { "fg": s:purple })
 call s:h("sassMixinName", { "fg": s:blue })
 call s:h("sassMixing", { "fg": s:purple })
@@ -527,8 +528,8 @@ call s:h("texRefZone", { "fg": s:blue })
 
 " TypeScript
 call s:h("typescriptReserved", { "fg": s:purple })
-call s:h("typescriptEndColons", { "fg": s:white })
-call s:h("typescriptBraces", { "fg": s:white })
+call s:h("typescriptEndColons", { "fg": s:pure_white })
+call s:h("typescriptBraces", { "fg": s:pure_white })
 
 " XML
 call s:h("xmlAttrib", { "fg": s:dark_yellow })
@@ -592,7 +593,7 @@ call s:h("gitcommitDiscardedFile", { "fg": s:red })
 call s:h("gitcommitSelectedFile", { "fg": s:green })
 call s:h("gitcommitUnmergedFile", { "fg": s:yellow })
 call s:h("gitcommitFile", {})
-call s:h("gitcommitSummary", { "fg": s:white })
+call s:h("gitcommitSummary", { "fg": s:pure_white })
 call s:h("gitcommitOverflow", { "fg": s:red })
 hi link gitcommitNoBranch gitcommitBranch
 hi link gitcommitUntracked gitcommitComment
@@ -615,7 +616,7 @@ if has("nvim")
   let g:terminal_color_4 =  s:blue.gui
   let g:terminal_color_5 =  s:purple.gui
   let g:terminal_color_6 =  s:cyan.gui
-  let g:terminal_color_7 =  s:white.gui
+  let g:terminal_color_7 =  s:pure_white.gui
   let g:terminal_color_8 =  s:visual_grey.gui
   let g:terminal_color_9 =  s:dark_red.gui
   let g:terminal_color_10 = s:green.gui " No dark version
@@ -630,11 +631,11 @@ if has("nvim")
   " Neovim LSP colors {{{
   call s:h("LspDiagnosticsDefaultError", { "fg": s:red })
   call s:h("LspDiagnosticsDefaultWarning", { "fg": s:yellow })
-  call s:h("LspDiagnosticsDefaultInformation", { "fg": s:white })
+  call s:h("LspDiagnosticsDefaultInformation", { "fg": s:pure_white })
   call s:h("LspDiagnosticsDefaultHint", { "fg": s:comment_grey })
   call s:h("LspDiagnosticsUnderlineError", { "fg": s:red, "gui": "underline", "cterm": "underline" })
   call s:h("LspDiagnosticsUnderlineWarning", { "fg": s:yellow, "gui": "underline", "cterm": "underline" })
-  call s:h("LspDiagnosticsUnderlineInformation", { "fg": s:white, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsUnderlineInformation", { "fg": s:pure_white, "gui": "underline", "cterm": "underline" })
   call s:h("LspDiagnosticsUnderlineHint", { "fg": s:comment_grey, "gui": "underline", "cterm": "underline" })
 " }}}
 endif
